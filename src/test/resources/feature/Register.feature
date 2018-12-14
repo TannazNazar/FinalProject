@@ -1,10 +1,12 @@
 Feature: RegisterFeature
 
-@registration
+  @registration
   Scenario: Creating accout
     Given I Open browser
     And I navigate to the FreaCrm
     When Click on Sign up Link
-    And Fill up "Free Edition" and "Mohammad" and "Shokriyan" and "msh_bigstar@yahoo.com" and "msh_bigstar" and "123456Ab"
+    And Fill up the following information
+      | PayPlan     | FirstName | LastName | Email                 | UserName    | Password      |
+      | Free Edition | Tannaz    | Nazar    | Tanaz.nazar@gmail.com | TananzNazar | Paswprd12345@ |
     And Click on submit
     And I Close browser

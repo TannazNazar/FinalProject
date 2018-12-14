@@ -4,9 +4,9 @@ Feature: LoginFeature
   Scenario: valid login
     Given I Open browser
     And I navigate to the FreaCrm
-    When I enter "mshokriyan" and "123456Ab"
+    When I enter "TannazNazar" and "Password12345@"
     And I click login button
-    Then I successfully logged in as "Mohammad Shokriyan"
+    Then I successfully logged in as "Tannaz Nazar"
     And I Close browser
 
   @second
@@ -20,13 +20,13 @@ Feature: LoginFeature
 
     Examples: 
       | username       | password   |
-      | mohammadshokhi | 1234567890 |
+      | TannazNazar | Password12345@ |
 
   @third
   Scenario: valid username and Invalid Password
     Given I Open browser
     And I navigate to the FreaCrm
-    When I enter "mshokriyan" and "Ab12344555"
+    When I enter "TannazNazar" and "Password12345@"
     And I click login button
     Then I should receive error massage
     And I Close browser

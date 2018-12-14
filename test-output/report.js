@@ -1,22 +1,22 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Register.feature");
 formatter.feature({
   "line": 1,
-  "name": "LoginFeature",
+  "name": "RegisterFeature",
   "description": "",
-  "id": "loginfeature",
+  "id": "registerfeature",
   "keyword": "Feature"
 });
 formatter.scenario({
   "line": 4,
-  "name": "valid login",
+  "name": "Creating accout",
   "description": "",
-  "id": "loginfeature;valid-login",
+  "id": "registerfeature;creating-accout",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
       "line": 3,
-      "name": "@first"
+      "name": "@registration"
     }
   ]
 });
@@ -32,21 +32,45 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "I enter \"mshokriyan\" and \"123456Ab\"",
+  "name": "Click on Sign up Link",
   "keyword": "When "
 });
 formatter.step({
   "line": 8,
-  "name": "I click login button",
+  "name": "Fill up the following information",
+  "rows": [
+    {
+      "cells": [
+        "PayPlan",
+        "FirstName",
+        "LastName",
+        "Email",
+        "UserName",
+        "Password"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "Free Edition",
+        "Tannaz",
+        "Nazar",
+        "Tanaz.nazar@gmail.com",
+        "TananzNazar",
+        "Paswprd12345@"
+      ],
+      "line": 10
+    }
+  ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "I successfully logged in as \"Mohammad Shokriyan\"",
-  "keyword": "Then "
+  "line": 11,
+  "name": "Click on submit",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 10,
+  "line": 12,
   "name": "I Close browser",
   "keyword": "And "
 });
@@ -54,58 +78,42 @@ formatter.match({
   "location": "LoginSteps.i_Open_browser()"
 });
 formatter.result({
-  "duration": 2404932388,
+  "duration": 3614575391,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_navigate_to_the_FreaCrm()"
 });
 formatter.result({
-  "duration": 1734836585,
+  "duration": 2324780287,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "mshokriyan",
-      "offset": 9
-    },
-    {
-      "val": "123456Ab",
-      "offset": 26
-    }
-  ],
-  "location": "LoginSteps.i_enter_and(String,String)"
+  "location": "RegistrationSteps.click_on_Sign_up_Link()"
 });
 formatter.result({
-  "duration": 500904329,
+  "duration": 4061941681,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_click_login_button()"
+  "location": "RegistrationSteps.fill_up_the_following_information(DataTable)"
 });
 formatter.result({
-  "duration": 4644821636,
+  "duration": 7251874157,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Mohammad Shokriyan",
-      "offset": 29
-    }
-  ],
-  "location": "LoginSteps.i_successfully_logged_in_as(String)"
+  "location": "RegistrationSteps.click_on_submit()"
 });
 formatter.result({
-  "duration": 41576865,
+  "duration": 5978221898,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_close_browser()"
 });
 formatter.result({
-  "duration": 82394952,
+  "duration": 133027256,
   "status": "passed"
 });
 });
