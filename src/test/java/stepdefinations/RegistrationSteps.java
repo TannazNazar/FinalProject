@@ -56,7 +56,26 @@ public class RegistrationSteps extends BaseClass {
 			}
 		}
 	}
-
+	
+	@When("^I fillup \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_fillup_and_and_and_and_and(String PayPlan, String FistName, String LastName, String Email, String UserName, String Password) throws Throwable {
+		WebElement planid = driver.findElement(By.id("payment_plan_id"));
+		Select select = new Select(planid);
+		select.selectByVisibleText(PayPlan);
+		driver.findElement(By.name("first_name")).sendKeys(FistName);
+		driver.findElement(By.name("surname")).sendKeys(LastName);
+		driver.findElement(By.name("email")).sendKeys(Email);
+		driver.findElement(By.name("email_confirm")).sendKeys(Email);
+		driver.findElement(By.name("username")).sendKeys(UserName);
+		driver.findElement(By.name("password")).sendKeys(Password);
+		driver.findElement(By.name("passwordconfirm")).sendKeys(Password);
+		
+		WebElement agreeTermBox = driver.findElement(By.name("agreeTerms"));
+		if (!agreeTermBox.isSelected()) {
+			agreeTermBox.click();
+		}
+		
+	}
 	@When("^Click on submit$")
 	public void click_on_submit() throws Throwable {
 		WebElement btnSubmit = driver.findElement(By.name("submitButton"));

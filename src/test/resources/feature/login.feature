@@ -19,7 +19,7 @@ Feature: LoginFeature
     And I Close browser
 
     Examples: 
-      | username       | password   |
+      | username    | password       |
       | TannazNazar | Password12345@ |
 
   @third
