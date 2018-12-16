@@ -1,9 +1,11 @@
 Feature: LoginFeature
 
-  @first
-  Scenario: valid login
+  Background: 
     Given I Open browser
     And I navigate to the FreaCrm
+
+  @first
+  Scenario: valid login
     When I enter "TannazNazar" and "Password12345@"
     And I click login button
     Then I successfully logged in as "Tannaz Nazar"
@@ -11,8 +13,6 @@ Feature: LoginFeature
 
   @second
   Scenario Outline: invalid login
-    Given I Open browser
-    And I navigate to the FreaCrm
     When I enter "<username>" and "<password>"
     And I click login button
     Then I should receive error massage
@@ -24,8 +24,6 @@ Feature: LoginFeature
 
   @third
   Scenario: valid username and Invalid Password
-    Given I Open browser
-    And I navigate to the FreaCrm
     When I enter "TannazNazar" and "Password12345@"
     And I click login button
     Then I should receive error massage

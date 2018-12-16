@@ -1,170 +1,72 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/feature/Register.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("NewAccount.feature");
 formatter.feature({
   "line": 1,
-  "name": "RegisterFeature",
+  "name": "Registration",
   "description": "",
-  "id": "registerfeature",
+  "id": "registration",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "line": 3,
-  "name": "Creating accout",
-  "description": "",
-  "id": "registerfeature;creating-accout",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
+formatter.scenarioOutline({
   "line": 4,
-  "name": "I Open browser",
-  "keyword": "Given "
+  "name": "Creating a new Account",
+  "description": "",
+  "id": "registration;creating-a-new-account",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@Registration"
+    }
+  ]
 });
 formatter.step({
   "line": 5,
-  "name": "I navigate to the FreaCrm",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 6,
-  "name": "Click on Sign up Link",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 7,
-  "name": "Fill up the following information",
-  "rows": [
-    {
-      "cells": [
-        "PayPlan",
-        "FirstName",
-        "LastName",
-        "Email",
-        "UserName",
-        "Password"
-      ],
-      "line": 8
-    },
-    {
-      "cells": [
-        "Free Edition",
-        "Tannaz",
-        "Nazar",
-        "Tanaz.nazar@gmail.com",
-        "TananzNazar",
-        "Paswprd12345@"
-      ],
-      "line": 9
-    }
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Click on submit",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I Close browser",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginSteps.i_Open_browser()"
-});
-formatter.result({
-  "duration": 2716791263,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginSteps.i_navigate_to_the_FreaCrm()"
-});
-formatter.result({
-  "duration": 5877061207,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegistrationSteps.click_on_Sign_up_Link()"
-});
-formatter.result({
-  "duration": 4284665567,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegistrationSteps.fill_up_the_following_information(DataTable)"
-});
-formatter.result({
-  "duration": 2087609667,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegistrationSteps.click_on_submit()"
-});
-formatter.result({
-  "duration": 654608898,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginSteps.i_close_browser()"
-});
-formatter.result({
-  "duration": 129188042,
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "line": 13,
-  "name": "create a new account",
-  "description": "",
-  "id": "registerfeature;create-a-new-account",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 14,
   "name": "I Open browser",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 15,
+  "line": 6,
   "name": "I navigate to the FreaCrm",
   "keyword": "And "
 });
 formatter.step({
-  "line": 16,
-  "name": "Click on Sign up Link",
+  "line": 7,
+  "name": "I click on SignUp",
   "keyword": "When "
 });
 formatter.step({
-  "line": 17,
-  "name": "I fillup \"\u003cPayPayment\u003e\" and \"\u003cFirstName\u003e\" and \"\u003cLastName\u003e\" and \"\u003cEmail\u003e\" and \"\u003cUserName\u003e\" and \"\u003cPassword\u003e\"",
+  "line": 8,
+  "name": "I fillup \"\u003cpaypayment\u003e\" and  \"\u003cFirstName\u003e\" and \"\u003cLastName\u003e\" and \"\u003cEmail\u003e\" and \"\u003cUsername\u003e\" and \"\u003cPassword\u003e\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
-  "name": "Click on submit",
-  "keyword": "And "
+  "line": 9,
+  "name": "I click on submit button",
+  "keyword": "Then "
 });
 formatter.step({
-  "line": 19,
-  "name": "I Close browser",
+  "line": 10,
+  "name": "I close the browser",
   "keyword": "And "
 });
 formatter.examples({
-  "line": 21,
+  "line": 12,
   "name": "",
   "description": "",
-  "id": "registerfeature;create-a-new-account;",
+  "id": "registration;creating-a-new-account;",
   "rows": [
     {
       "cells": [
-        "PayPayment",
+        "paypayment",
         "FirstName",
         "LastName",
         "Email",
-        "UserName",
+        "Username",
         "Password"
       ],
-      "line": 22,
-      "id": "registerfeature;create-a-new-account;;1"
+      "line": 13,
+      "id": "registration;creating-a-new-account;;1"
     },
     {
       "cells": [
@@ -175,38 +77,60 @@ formatter.examples({
         "TannazNazar",
         "Password12345@"
       ],
-      "line": 23,
-      "id": "registerfeature;create-a-new-account;;2"
+      "line": 14,
+      "id": "registration;creating-a-new-account;;2"
+    },
+    {
+      "cells": [
+        "Free Edition",
+        "Sheyda",
+        "Karimi",
+        "Sheyda.key@gamil.com",
+        "SheydaKarimi",
+        "Shey12345@"
+      ],
+      "line": 15,
+      "id": "registration;creating-a-new-account;;3"
     }
   ],
   "keyword": "Examples"
 });
+formatter.before({
+  "duration": 917703,
+  "status": "passed"
+});
 formatter.scenario({
-  "line": 23,
-  "name": "create a new account",
+  "line": 14,
+  "name": "Creating a new Account",
   "description": "",
-  "id": "registerfeature;create-a-new-account;;2",
+  "id": "registration;creating-a-new-account;;2",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@Registration"
+    }
+  ]
 });
 formatter.step({
-  "line": 14,
+  "line": 5,
   "name": "I Open browser",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 15,
+  "line": 6,
   "name": "I navigate to the FreaCrm",
   "keyword": "And "
 });
 formatter.step({
-  "line": 16,
-  "name": "Click on Sign up Link",
+  "line": 7,
+  "name": "I click on SignUp",
   "keyword": "When "
 });
 formatter.step({
-  "line": 17,
-  "name": "I fillup \"Free Edition\" and \"Tannaz\" and \"Nazar\" and \"Tanaz.nazar@gmail.com\" and \"TannazNazar\" and \"Password12345@\"",
+  "line": 8,
+  "name": "I fillup \"Free Edition\" and  \"Tannaz\" and \"Nazar\" and \"Tanaz.nazar@gmail.com\" and \"TannazNazar\" and \"Password12345@\"",
   "matchedColumns": [
     0,
     1,
@@ -218,34 +142,34 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
-  "name": "Click on submit",
-  "keyword": "And "
+  "line": 9,
+  "name": "I click on submit button",
+  "keyword": "Then "
 });
 formatter.step({
-  "line": 19,
-  "name": "I Close browser",
+  "line": 10,
+  "name": "I close the browser",
   "keyword": "And "
 });
 formatter.match({
   "location": "LoginSteps.i_Open_browser()"
 });
 formatter.result({
-  "duration": 1143987013,
+  "duration": 2851243800,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_navigate_to_the_FreaCrm()"
 });
 formatter.result({
-  "duration": 2497779831,
+  "duration": 2792480478,
   "status": "passed"
 });
 formatter.match({
-  "location": "RegistrationSteps.click_on_Sign_up_Link()"
+  "location": "NewAccount.i_click_on_SignUp()"
 });
 formatter.result({
-  "duration": 4221925621,
+  "duration": 3909063120,
   "status": "passed"
 });
 formatter.match({
@@ -256,43 +180,175 @@ formatter.match({
     },
     {
       "val": "Tannaz",
-      "offset": 29
+      "offset": 30
     },
     {
       "val": "Nazar",
-      "offset": 42
+      "offset": 43
     },
     {
       "val": "Tanaz.nazar@gmail.com",
-      "offset": 54
+      "offset": 55
     },
     {
       "val": "TannazNazar",
-      "offset": 82
+      "offset": 83
     },
     {
       "val": "Password12345@",
-      "offset": 100
+      "offset": 101
     }
   ],
-  "location": "RegistrationSteps.i_fillup_and_and_and_and_and(String,String,String,String,String,String)"
+  "location": "NewAccount.i_fillup_and_and_and_and_and(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 1997863696,
+  "duration": 1482642746,
   "status": "passed"
 });
 formatter.match({
-  "location": "RegistrationSteps.click_on_submit()"
+  "location": "NewAccount.i_click_on_submit_button()"
 });
 formatter.result({
-  "duration": 403082430,
+  "duration": 154026881,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_close_browser()"
+  "location": "NewAccount.i_close_the_browser()"
 });
 formatter.result({
-  "duration": 145114872,
+  "duration": 149920944,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 171404,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 63097,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 15,
+  "name": "Creating a new Account",
+  "description": "",
+  "id": "registration;creating-a-new-account;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@Registration"
+    }
+  ]
+});
+formatter.step({
+  "line": 5,
+  "name": "I Open browser",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "I navigate to the FreaCrm",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "I click on SignUp",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 8,
+  "name": "I fillup \"Free Edition\" and  \"Sheyda\" and \"Karimi\" and \"Sheyda.key@gamil.com\" and \"SheydaKarimi\" and \"Shey12345@\"",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I click on submit button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I close the browser",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginSteps.i_Open_browser()"
+});
+formatter.result({
+  "duration": 1125226370,
+  "status": "passed"
+});
+formatter.match({
+  "location": "LoginSteps.i_navigate_to_the_FreaCrm()"
+});
+formatter.result({
+  "duration": 2514047800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NewAccount.i_click_on_SignUp()"
+});
+formatter.result({
+  "duration": 3948650158,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Free Edition",
+      "offset": 10
+    },
+    {
+      "val": "Sheyda",
+      "offset": 30
+    },
+    {
+      "val": "Karimi",
+      "offset": 43
+    },
+    {
+      "val": "Sheyda.key@gamil.com",
+      "offset": 56
+    },
+    {
+      "val": "SheydaKarimi",
+      "offset": 83
+    },
+    {
+      "val": "Shey12345@",
+      "offset": 102
+    }
+  ],
+  "location": "NewAccount.i_fillup_and_and_and_and_and(String,String,String,String,String,String)"
+});
+formatter.result({
+  "duration": 1350874064,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NewAccount.i_click_on_submit_button()"
+});
+formatter.result({
+  "duration": 122189551,
+  "status": "passed"
+});
+formatter.match({
+  "location": "NewAccount.i_close_the_browser()"
+});
+formatter.result({
+  "duration": 140633859,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 138502,
   "status": "passed"
 });
 });
